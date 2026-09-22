@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timeline &middot; Concurrent Computing Curricula for Cyber-Physical Systems</title>
+<meta name="description" content="The 24-month project schedule for curriculum, visualization, and CEDL development, plus the evaluation plan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">CC4CPS</a>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="modules.html">Modules</a>
+      <a href="tools.html">Tools</a>
+      <a href="timeline.html" aria-current="page">Timeline</a>
+      <a href="team.html">Team</a>
+      <a href="awards.html">Awards</a>
+      <a href="materials.html">Materials</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Schedule</p>
+    <h1>Project timeline</h1>
+    <p class="lede">Twenty-four months, August 2026 through July 2028. Year 1 focuses on development; Year 2 on refinement, classroom testing, and evaluation.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="gantt" role="table" aria-label="Project schedule by month">
+      <div class="g-row g-head" role="row">
+        <div class="g-label" role="columnheader">Activity</div>
+        <div class="g-track" role="columnheader">
+          <span class="yr" style="--s:1;--e:12">Year 1 &middot; Aug 2026 &ndash; Jul 2027</span>
+          <span class="yr" style="--s:13;--e:24">Year 2 &middot; Aug 2027 &ndash; Jul 2028</span>
+        </div>
+      </div>
+
+      <div class="g-group" role="row"><div role="cell">Curriculum materials</div></div>
+      <div class="g-row" role="row"><div class="g-label" role="cell">Develop curriculum materials</div><div class="g-track" role="cell"><span class="bar c1" style="--s:1;--e:12">Months 1&ndash;12</span></div></div>
+      <div class="g-row" role="row"><div class="g-label" role="cell">Refine materials</div><div class="g-track" role="cell"><span class="bar c1 soft" style="--s:13;--e:24">Months 13&ndash;24</span></div></div>
+      <div class="g-row" role="row"><div class="g-label" role="cell">Initial classroom testing</div><div class="g-track" role="cell"><span class="bar c1 soft" style="--s:13;--e:24">Months 13&ndash;24</span></div></div>
+
+      <div class="g-group" role="row"><div role="cell">Visualization systems</div></div>
+      <div class="g-row" role="row"><div class="g-label" role="cell">Develop visualization and wrappers</div><div class="g-track" role="cell"><span class="bar c2" style="--s:1;--e:12">Months 1&ndash;12</span></div></div>
+      <div class="g-row" role="row"><div class="g-label" role="cell">Maintenance and new features</div><div class="g-track" role="cell"><span class="bar c2 soft" style="--s:13;--e:24">Months 13&ndash;24</span></div></div>
+      <div class="g-row" role="row"><div class="g-label" role="cell">Testing visualization</div><div class="g-track" role="cell"><span class="bar c2 soft" style="--s:13;--e:24">Months 13&ndash;24</span></div></div>
+
+      <div class="g-group" role="row"><div role="cell">CEDL</div></div>
+      <div class="g-row" role="row"><div class="g-label" role="cell">CEDL development</div><div class="g-track" role="cell"><span class="bar c3" style="--s:9;--e:18">Months 9&ndash;18</span></div></div>
+      <div class="g-row" role="row"><div class="g-label" role="cell">Pattern analysis and class testing</div><div class="g-track" role="cell"><span class="bar c3 soft" style="--s:19;--e:24">Months 19&ndash;24</span></div></div>
+    </div>
+
+    <div class="grid three">
+      <div class="card">
+        <h3>Curriculum materials</h3>
+        <p>Development starts in month 1 and runs throughout. Year 1 produces modules on concurrency foundations, fault tolerance, security, and the automotive and aviation applications. Year 2 refines them against early feedback while classroom testing in engineering courses runs in parallel, so iteration and validation happen together.</p>
+      </div>
+      <div class="card">
+        <h3>Visualization and wrappers</h3>
+        <p>Core implementation runs through the end of Year 1: new visualizations plus language-specific wrappers for ROS&nbsp;2, FreeRTOS, and Linux. Year 2 covers maintenance, features requested by users, and testing in real classrooms for usability, correctness of the visualizations, and whether they actually help students find bugs.</p>
+      </div>
+      <div class="card">
+        <h3>CEDL</h3>
+        <p>Development starts in month 9, once the foundational tooling has matured, and continues through month 18. Months 19&ndash;24 shift to evaluation: pattern-detection analyses, deployment in pilot classes, empirical data on effectiveness, and refinement from classroom experience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Evaluation</h2>
+    <div class="grid two-up">
+      <div class="card">
+        <h3>Pre- and post-surveys</h3>
+        <p>Surveys administered before and after each course examine student perceptions of concurrency concepts and confidence with the material. Most items are quantitative, with a few open-ended prompts for insight that numbers miss. Analysis compares pre- and post-responses.</p>
+      </div>
+      <div class="card">
+        <h3>Tool evaluation</h3>
+        <p>Users are surveyed on the effectiveness of the libraries and CEDL. For the visualizer, a user-testing protocol guides formal sessions with three to six students and faculty, optionally recording audio and screen. Sessions are analyzed for task success and failure, time on task segments, emotional responses, behavior flow, obstacles, participant perspectives, and bugs encountered.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Acknowledgment.</strong> This material is based upon work supported by the National Science Foundation under Grant Nos. 2612129 and 2612130. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.</p>
+  </div>
+</footer>
+
+</body>
+</html>
