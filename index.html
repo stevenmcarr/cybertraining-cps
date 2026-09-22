@@ -16,23 +16,21 @@
 
 <header class="site-header">
   <div class="wrap nav">
-    <a class="brand" href="index.html">CC4CPS</a>
-    <nav aria-label="Main">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="about.html">About</a>
-      <a href="modules.html">Modules</a>
-      <a href="tools.html">Tools</a>
-      <a href="timeline.html">Timeline</a>
-      <a href="team.html">Team</a>
-      <a href="awards.html">Awards</a>
-      <a href="materials.html">Materials</a>
+    <a class="brand" href="#top">CC4CPS</a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#modules">Modules</a>
+      <a href="#tools">Tools</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#team">Team</a>
+      <a href="#awards">Awards</a>
     </nav>
   </div>
 </header>
 
 <main id="main">
 
-<section class="hero">
+<section class="hero" id="top">
   <div class="wrap">
     <p class="eyebrow">NSF CyberTraining: Pilot &middot; Collaborative Research</p>
     <h1>Concurrent Computing Curricula for Cyber-Physical Systems</h1>
@@ -42,19 +40,19 @@
       <span>August 2026 &ndash; July 2028</span>
     </div>
     <div class="hero-links">
-      <a class="btn" href="about.html">About the project</a>
-      <a class="btn btn-ghost" href="modules.html">Learning modules</a>
+      <a class="btn" href="https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2612129">NSF Award 2612129</a>
+      <a class="btn btn-ghost" href="https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2612130">NSF Award 2612130</a>
     </div>
   </div>
 </section>
 
-<section>
+<section id="about">
   <div class="wrap two-col">
     <div>
-      <h2>Why this project</h2>
+      <h2>About the project</h2>
       <p>Automobiles, aircraft, and other safety-critical systems depend on software that performs many tasks at once. Small timing or coordination mistakes such as race conditions, deadlocks, and stale data can go unnoticed in testing and later cause unsafe behavior.</p>
       <p>The engineers who build these systems are often trained in mechanics and electronics rather than concurrent programming. This project develops a modular curriculum and open educational tools that give them hands-on experience with concurrent and distributed computing, grounded in the platforms they use: <strong>POSIX threads</strong>, <strong>FreeRTOS</strong>, and <strong>ROS&nbsp;2</strong>.</p>
-      <p><a href="about.html">Read more about the project &rarr;</a></p>
+      <p>The work builds on two decades of NSF-funded concurrency education tools, <em>ThreadMentor</em> and <em>ConcurrentMentor</em>, which the team is modernizing and retargeting for engineering audiences.</p>
     </div>
     <aside class="card facts" aria-label="Project at a glance">
       <h3>At a glance</h3>
@@ -69,39 +67,255 @@
   </div>
 </section>
 
-<section class="alt">
+<section id="modules" class="alt">
   <div class="wrap">
-    <h2>Explore</h2>
-    <div class="grid cardlinks">
-      <a class="card link-card" href="about.html">
-        <h3>About</h3>
-        <p>The problem, the approach, and how the two institutions collaborate.</p>
-      </a>
-      <a class="card link-card" href="modules.html">
-        <h3>Modules</h3>
-        <p>Four learning modules: foundations, fault tolerance, autonomous vehicles, aviation.</p>
-      </a>
-      <a class="card link-card" href="tools.html">
-        <h3>Tools</h3>
-        <p>Instrumentation wrappers, the visualization system, and the CEDL language.</p>
-      </a>
-      <a class="card link-card" href="timeline.html">
-        <h3>Timeline</h3>
-        <p>The 24-month schedule and the evaluation plan.</p>
-      </a>
-      <a class="card link-card" href="team.html">
-        <h3>Team</h3>
-        <p>Investigators at WMU and Michigan Tech, and the students they mentor.</p>
-      </a>
-      <a class="card link-card" href="awards.html">
-        <h3>Awards</h3>
-        <p>NSF awards 2612129 and 2612130, with amounts and program details.</p>
-      </a>
-      <a class="card link-card" href="materials.html">
-        <h3>Materials</h3>
-        <p>Modules and software as they are released, and how to pilot them.</p>
-      </a>
+    <h2>Learning modules</h2>
+    <p class="section-intro">Each module includes notes, exercises, and animations. Modules assume a first programming course in C, C++, or Python and require no prior coursework in operating systems or distributed systems.</p>
+
+    <div class="grid modules">
+      <article class="card module">
+        <span class="num">1</span>
+        <h3>Foundations of Concurrent Computing</h3>
+        <p class="lead-by">Led by Jean Mayo, Michigan Tech</p>
+        <p>Seven 3&ndash;4 hour units that pair lecture with hands-on visualization:</p>
+        <ul>
+          <li>Concurrent execution and nondeterministic interleaving</li>
+          <li>Shared state, race conditions, and atomicity</li>
+          <li>Synchronization primitives: mutexes, semaphores, monitors, channels</li>
+          <li>Ordering, causality, and happens-before</li>
+          <li>Deadlock, livelock, priority inversion, and starvation</li>
+          <li>Event- and message-driven execution in ROS&nbsp;2</li>
+          <li>Testing and debugging concurrent systems</li>
+        </ul>
+      </article>
+
+      <article class="card module">
+        <span class="num">2</span>
+        <h3>Fault Tolerance in Distributed Systems</h3>
+        <p class="lead-by">Led by Ali Ebnenasir, Michigan Tech</p>
+        <ul>
+          <li>Taxonomy of faults, errors, and failures; fault injection</li>
+          <li>Traditional methods: replicated state machines, checkpointing, rollback</li>
+          <li>Distributed protocols: two-phase commit, leader election, Paxos, Raft, Byzantine tolerance, specified in TLA+ and Promela</li>
+          <li>Modern methods: fault span, failsafe / nonmasking / masking tolerance, detectors and correctors, self-stabilization</li>
+        </ul>
+      </article>
+
+      <article class="card module">
+        <span class="num">3</span>
+        <h3>Timing and Safety in Autonomous Vehicle Software</h3>
+        <p class="lead-by">Led by Zachary Asher, Western Michigan</p>
+        <p>Perception-to-control pipelines treated as concurrent systems. In a lab that bridges ROS&nbsp;2 with the CARLA simulator, students vary QoS settings such as history depth, reliability, and deadlines, then watch how delayed or dropped messages, missed deadlines, and priority inversion affect vehicle behavior.</p>
+        <p class="courses">For ME/CS 5813 Autonomous Vehicles and ME 4650 Vehicle Dynamics and Control</p>
+      </article>
+
+      <article class="card module">
+        <span class="num">4</span>
+        <h3>Safety and Security Assurance in Aviation Systems</h3>
+        <p class="lead-by">Led by Radu Babiceanu, Western Michigan</p>
+        <p>Agent-based modeling and simulation in AnyLogic, NetLogo, OMNeT++, and NS-3:</p>
+        <ul>
+          <li>Surveillance missions with swarms of unmanned aerial systems</li>
+          <li>Aeronautical telecommunication network mobility (MIPv6)</li>
+          <li>Collision avoidance as a system invariant, verified in Event-B</li>
+        </ul>
+        <p class="courses">For ECE 5800 System Modeling and Simulation</p>
+      </article>
     </div>
+
+    <p class="note"><strong>Security throughout.</strong> Vulnerabilities that come from concurrency, such as timing flaws, unchecked inputs, and unsafe handling of shared resources, are taught inside the modules where they arise.</p>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <h2>Tools</h2>
+    <p class="section-intro">A toolchain that lets students watch what their concurrent programs actually do, without rewriting them.</p>
+
+    <div class="pipeline" role="img" aria-label="Toolchain: instrumented programs on pthreads, FreeRTOS, or ROS 2 emit a unified event stream through an on-device agent to the visualization system; CEDL programs feed the same visualization.">
+      <div class="stage">
+        <h4>Your program</h4>
+        <p>pthreads &middot; FreeRTOS &middot; ROS&nbsp;2</p>
+      </div>
+      <div class="arrow" aria-hidden="true"></div>
+      <div class="stage">
+        <h4>Wrapper library</h4>
+        <p>Drop-in headers capture synchronization events</p>
+      </div>
+      <div class="arrow" aria-hidden="true"></div>
+      <div class="stage">
+        <h4>Event stream</h4>
+        <p>Common schema, ring buffer, on-device agent</p>
+      </div>
+      <div class="arrow" aria-hidden="true"></div>
+      <div class="stage stage-accent">
+        <h4>Visualization</h4>
+        <p>Web and desktop views, live or replay</p>
+      </div>
+    </div>
+
+    <div class="grid three">
+      <div class="card">
+        <h3>Wrappers and libraries</h3>
+        <p>Source-compatible wrappers for <strong>POSIX threads</strong> (mutexes, semaphores, reader&ndash;writer locks, barriers, Hoare and Mesa monitors), <strong>FreeRTOS</strong> (tasks, queues, semaphores, event groups, timers), and <strong>ROS&nbsp;2</strong> executors in rclcpp and rclpy. Swap one header and link the library; program logic stays unchanged.</p>
+        <p>Built-in <strong>fuzzing</strong> inserts controlled random delays at synchronization points to surface races that ordinary runs hide.</p>
+      </div>
+      <div class="card">
+        <h3>Visualization system</h3>
+        <p>Coordinated views of a single execution:</p>
+        <ul>
+          <li>Timeline view of threads, tasks, and callbacks</li>
+          <li>Happens-before and causality view</li>
+          <li>Object-centric view of each lock, semaphore, or channel</li>
+          <li>Component grouping for ROS&nbsp;2 nodes</li>
+          <li>Play, pause, step, scrub, and reverse</li>
+        </ul>
+        <p>Color-blind-safe palettes, redundant shape cues, and full keyboard navigation.</p>
+      </div>
+      <div class="card">
+        <h3>CEDL</h3>
+        <p>The <strong>Concurrent Event Description Language</strong> lets instructors script an exact interleaving instead of hoping a real run reproduces it. Each thread lists its events with a logical time; the interpreter replays them in the visualizer, forward or backward.</p>
+<pre class="code" aria-label="CEDL example"><code><span class="c">// Thread A</span>          <span class="c">// Thread B</span>
+shared A;            shared A;
+mutex_lock(lock,2)   mutex_lock(lock,1)
+write(A,5)           read(A,3)
+mutex_unlock(lock,6) mutex_unlock(lock,4)</code></pre>
+      </div>
+    </div>
+
+    <h3 class="gallery-title">Prototype</h3>
+    <p>The prototype visualizer is being tested in CS 3331 Concurrent Computing at Michigan Tech. Clicking an event opens the source line that produced it.</p>
+    <div class="gallery">
+      <figure>
+        <img src="images/timeline-view.png" alt="ThreadMentor Timeline view showing three threads. Thread 1 enters a Mesa monitor and waits on a condition variable; Thread 2 enters and signals." loading="lazy" width="1200" height="945">
+        <figcaption>Timeline view: after a condition-variable signal in a Mesa monitor.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/resource-view.png" alt="ThreadMentor Resources view showing a card for a Mesa monitor: Thread 2 owns the monitor lock and Thread 1 waits on the condition variable." loading="lazy" width="1200" height="946">
+        <figcaption>Resource view: Thread 2 still holds the monitor lock; Thread 1 waits to reenter.</figcaption>
+      </figure>
+      <figure class="wide">
+        <img src="images/worker-timeline.png" alt="ThreadMentor Timeline view of a main thread creating two workers that contend for a mutex, then joining them." loading="lazy" width="1600" height="730">
+        <figcaption>Timeline view: two workers contend for a mutex while main waits to join them.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="timeline" class="alt">
+  <div class="wrap">
+    <h2>Timeline</h2>
+    <p class="section-intro">Year 1 focuses on development. Year 2 focuses on refinement, classroom testing, and evaluation.</p>
+
+    <div class="gantt" role="table" aria-label="Project schedule by month">
+      <div class="g-row g-head" role="row">
+        <div class="g-label" role="columnheader">Activity</div>
+        <div class="g-track" role="columnheader">
+          <span class="yr" style="--s:1;--e:12">Year 1 &middot; Aug 2026 &ndash; Jul 2027</span>
+          <span class="yr" style="--s:13;--e:24">Year 2 &middot; Aug 2027 &ndash; Jul 2028</span>
+        </div>
+      </div>
+
+      <div class="g-group" role="row"><div role="cell">Curriculum materials</div></div>
+      <div class="g-row" role="row"><div class="g-label" role="cell">Develop curriculum materials</div><div class="g-track" role="cell"><span class="bar c1" style="--s:1;--e:12">Months 1&ndash;12</span></div></div>
+      <div class="g-row" role="row"><div class="g-label" role="cell">Refine materials</div><div class="g-track" role="cell"><span class="bar c1 soft" style="--s:13;--e:24">Months 13&ndash;24</span></div></div>
+      <div class="g-row" role="row"><div class="g-label" role="cell">Initial classroom testing</div><div class="g-track" role="cell"><span class="bar c1 soft" style="--s:13;--e:24">Months 13&ndash;24</span></div></div>
+
+      <div class="g-group" role="row"><div role="cell">Visualization systems</div></div>
+      <div class="g-row" role="row"><div class="g-label" role="cell">Develop visualization and wrappers</div><div class="g-track" role="cell"><span class="bar c2" style="--s:1;--e:12">Months 1&ndash;12</span></div></div>
+      <div class="g-row" role="row"><div class="g-label" role="cell">Maintenance and new features</div><div class="g-track" role="cell"><span class="bar c2 soft" style="--s:13;--e:24">Months 13&ndash;24</span></div></div>
+      <div class="g-row" role="row"><div class="g-label" role="cell">Testing visualization</div><div class="g-track" role="cell"><span class="bar c2 soft" style="--s:13;--e:24">Months 13&ndash;24</span></div></div>
+
+      <div class="g-group" role="row"><div role="cell">CEDL</div></div>
+      <div class="g-row" role="row"><div class="g-label" role="cell">CEDL development</div><div class="g-track" role="cell"><span class="bar c3" style="--s:9;--e:18">Months 9&ndash;18</span></div></div>
+      <div class="g-row" role="row"><div class="g-label" role="cell">Pattern analysis and class testing</div><div class="g-track" role="cell"><span class="bar c3 soft" style="--s:19;--e:24">Months 19&ndash;24</span></div></div>
+    </div>
+
+    <h3>Evaluation</h3>
+    <p>Pre- and post-course surveys measure changes in students' understanding of and confidence with concurrency concepts. The libraries and CEDL are evaluated through user surveys, and the visualizer through formal usability testing with students and faculty.</p>
+  </div>
+</section>
+
+<section id="team">
+  <div class="wrap">
+    <h2>Team</h2>
+    <div class="grid team">
+      <div class="person">
+        <h3>Steven M. Carr</h3>
+        <p class="role">Lead PI &middot; Western Michigan University</p>
+        <p>Overall project management, the CEDL compiler and interpreter, and security content across modules.</p>
+      </div>
+      <div class="person">
+        <h3>Jean Mayo</h3>
+        <p class="role">PI &middot; Michigan Technological University</p>
+        <p>Visualization system and supporting libraries; Foundations of Concurrent Computing module. Co-developer of ConcurrentMentor.</p>
+      </div>
+      <div class="person">
+        <h3>Ali Ebnenasir</h3>
+        <p class="role">Co-PI &middot; Michigan Technological University</p>
+        <p>Fault Tolerance in Distributed Systems module. Research in software reliability for concurrent and distributed systems.</p>
+      </div>
+      <div class="person">
+        <h3>Zachary D. Asher</h3>
+        <p class="role">Co-PI &middot; Western Michigan University</p>
+        <p>Autonomous vehicle module. Research in perception, integration, and safety for self-driving vehicles.</p>
+      </div>
+      <div class="person">
+        <h3>Radu F. Babiceanu</h3>
+        <p class="role">Co-PI &middot; Western Michigan University</p>
+        <p>Aviation systems module. Research in aviation cybersecurity and safety assurance for cyber-physical systems.</p>
+      </div>
+      <div class="person">
+        <h3>Matthew A. Phillips</h3>
+        <p class="role">PhD student &middot; Western Michigan University</p>
+        <p>Graduate researcher on the WMU team, contributing to CEDL and its compiler and interpreter.</p>
+      </div>
+      <div class="person">
+        <h3>Bipin Bhusal Chherti</h3>
+        <p class="role">PhD student &middot; Western Michigan University</p>
+        <p>Graduate researcher on the WMU team, contributing to CEDL and its compiler and interpreter.</p>
+      </div>
+      <div class="person">
+        <h3>Michigan Tech graduate researcher</h3>
+        <p class="role">Michigan Technological University</p>
+        <p>Develops the visualization system and supporting libraries. Students at both institutions are mentored through an individual development plan and industry advisory board pairings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="awards" class="alt">
+  <div class="wrap">
+    <h2>Awards</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th scope="col">Award</th><th scope="col">Institution</th><th scope="col">Investigators</th><th scope="col">Amount</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2612129">OAC-2612129</a></td>
+            <td>Western Michigan University</td>
+            <td>Steven M. Carr (PI), Zachary D. Asher, Radu Babiceanu</td>
+            <td class="num-cell">$120,941</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2612130">OAC-2612130</a></td>
+            <td>Michigan Technological University</td>
+            <td>Jean Mayo (PI), Ali Ebnenasir</td>
+            <td class="num-cell">$178,462</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small">Program: CyberTraining, Office of Advanced Cyberinfrastructure, Directorate for Computer and Information Science and Engineering. Period of performance: August 1, 2026 to July 31, 2028.</p>
+  </div>
+</section>
+
+<section id="resources">
+  <div class="wrap">
+    <h2>Materials and software</h2>
+    <p>Module materials, the visualization system, the wrapper libraries, and CEDL will be released here as they become available. Instructors interested in piloting a module can contact <a href="mailto:steve.carr@wmich.edu">Steven Carr</a>.</p>
   </div>
 </section>
 
