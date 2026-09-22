@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learning modules &middot; Concurrent Computing Curricula for Cyber-Physical Systems</title>
+<meta name="description" content="Four learning modules: foundations of concurrent computing, fault tolerance in distributed systems, timing and safety in autonomous vehicle software, and safety and security assurance in aviation systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">CC4CPS</a>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="modules.html" aria-current="page">Modules</a>
+      <a href="tools.html">Tools</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="team.html">Team</a>
+      <a href="awards.html">Awards</a>
+      <a href="materials.html">Materials</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Curriculum</p>
+    <h1>Learning modules</h1>
+    <p class="lede">Each module includes notes, exercises, and animations. Modules assume a first programming course in C, C++, or Python and require no prior coursework in operating systems or distributed systems.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <article class="card module module-full" id="foundations">
+      <span class="num">1</span>
+      <h2>Foundations of Concurrent Computing</h2>
+      <p class="lead-by">Led by Jean Mayo, Michigan Tech</p>
+      <p>These units introduce engineering students to the principles of concurrent execution, so that learners who have never taken operating systems, distributed systems, or parallel computing can recognize, reason about, and debug what happens when multiple tasks run at once and share resources.</p>
+      <p>Seven units of three to four hours each pair lecture material with hands-on visualization. Instructors may take subsets, with units 1&ndash;4 as a suggested core, fold them into an existing course, or teach them as a short intensive workshop. Each unit carries formative exercises and a summative problem set.</p>
+      <ol class="units">
+        <li><strong>Concurrent execution.</strong> Sources of concurrency in engineering systems: threads, tasks, callbacks, interrupts. Shared-memory versus parallel versus message-driven execution, and why concurrent debugging differs from sequential debugging.</li>
+        <li><strong>Shared state, race conditions, and atomicity.</strong> Conflicting accesses, read/write atomicity, torn reads, lost updates, inconsistent global states, and the effects of compiler and hardware reordering.</li>
+        <li><strong>Synchronization primitives.</strong> Mutual exclusion and critical sections, semaphores, monitors and condition variables, producer-consumer patterns, queues, channels, and message passing.</li>
+        <li><strong>Ordering, causality, and happens-before.</strong> Program order versus order induced by synchronization, the happens-before relation, and logical and vector timestamps.</li>
+        <li><strong>Deadlock, livelock, priority inversion, and starvation.</strong> Deadlock conditions, wait-for graphs, resource cycles, spin-based behavior, and fairness, with examples from FreeRTOS and ROS&nbsp;2 executors.</li>
+        <li><strong>Event- and message-driven execution in ROS&nbsp;2.</strong> The executor model, subscription and timer callbacks, service handlers and action servers, message queues, buffering, and QoS-induced nondeterminism.</li>
+        <li><strong>Testing and debugging concurrent systems.</strong> Why concurrency bugs resist reproduction, limits of deterministic replay, perturbation strategies, and visualization-assisted debugging in live and postmortem modes.</li>
+      </ol>
+    </article>
+
+    <article class="card module module-full" id="fault-tolerance">
+      <span class="num">2</span>
+      <h2>Fault Tolerance in Distributed Systems</h2>
+      <p class="lead-by">Led by Ali Ebnenasir, Michigan Tech</p>
+      <p>A comprehensive look at traditional and modern methods for designing and implementing fault-tolerant distributed systems.</p>
+      <ul>
+        <li><strong>Taxonomy of faults, errors, and failures.</strong> Environmental faults versus design flaws, the fault-error-failure chain, error states, fault span, and fault diagnosis as predicate detection. Students inject faults and observe their effects in the visualizer.</li>
+        <li><strong>Traditional methods.</strong> Replicated state machines, checkpoint insertion, rollback to normal computation, recovery-based computing, and the difficulty of detecting and correcting distributed state.</li>
+        <li><strong>Distributed protocols.</strong> Two-phase commit, leader election, consensus with Paxos, distributed reset, Raft, distributed hash tables, and Byzantine tolerance, specified and refined in TLA+ and Promela.</li>
+        <li><strong>Modern methods.</strong> Safety and liveness under faults, the three levels of tolerance (failsafe, nonmasking, masking), compositional design with detectors and correctors, automated design of fault tolerance, and self-stabilization.</li>
+      </ul>
+    </article>
+
+    <article class="card module module-full" id="autonomous-vehicles">
+      <span class="num">3</span>
+      <h2>Timing, Synchronization, and Safety in Autonomous Vehicle Software</h2>
+      <p class="lead-by">Led by Zachary Asher, Western Michigan University</p>
+      <p>Autonomy stacks combine asynchronous perception, planning, and control components with distinct timing requirements. Safety-critical failures often come not from a faulty perception model but from mismatches in timing, synchronization, and communication between components: control decisions made on stale or unsynchronized data can be unsafe even when every algorithm works correctly in isolation.</p>
+      <p>Students work with ROS&nbsp;2 nodes communicating through message-passing interfaces, where buffering, scheduling, and execution order shape system behavior. Default QoS settings suffice for demonstrations but hide the timing effects that matter in safety-critical operation, and this module makes them explicit.</p>
+      <h3>Learning objectives</h3>
+      <ol>
+        <li>Analyze perception-to-control pipelines as concurrent systems rather than sequential workflows.</li>
+        <li>Reason about latency, jitter, and stale information in safety-critical decisions.</li>
+        <li>Understand how ROS&nbsp;2 QoS policies affect data freshness and control behavior.</li>
+        <li>Implement and evaluate timing constraints and deadlines for perception and control nodes.</li>
+        <li>Diagnose concurrency-induced failures from execution traces and visualizations.</li>
+      </ol>
+      <h3>Laboratory</h3>
+      <p>An integrated lab bridges ROS&nbsp;2 with the CARLA vehicle simulator. Perception outputs come from predetermined data streams, such as YAML proxies for detected objects, so students concentrate on timing and synchronization rather than behavior prediction. By varying history depth, reliability, and deadlines, they watch delayed and dropped messages propagate through the control loop. Degraded sensing conditions, such as reduced visibility or noisy measurements, shrink the margin for timing error and show why data freshness is a safety property.</p>
+      <p class="courses">For ME/CS 5813 Autonomous Vehicles and ME 4650 Vehicle Dynamics and Control; also usable as a standalone lab.</p>
+    </article>
+
+    <article class="card module module-full" id="aviation">
+      <span class="num">4</span>
+      <h2>Safety and Security Assurance in Aviation Systems</h2>
+      <p class="lead-by">Led by Radu Babiceanu, Western Michigan University</p>
+      <p>Demand for airspace access keeps growing, with more space launches and a proliferation of unmanned aerial systems joining commercial and general aviation. Air traffic management and autonomous flight scheduling depend on positioning, navigation, and timing operations that are vulnerable to miscommunication, degraded coordination, missing temporal logic, and deliberate spoofing or jamming of satellite links and receivers.</p>
+      <p>This module treats concurrency in agent-based communication and coordination, modeled and simulated in environments such as AnyLogic, NetLogo, OMNeT++, and NS-3.</p>
+      <ul>
+        <li><strong>Surveillance missions with UAS swarms.</strong> Coverage emerges from swarm coordination, with each agent running collision avoidance, exception handling, and distributed workload control.</li>
+        <li><strong>Aeronautical telecommunication network mobility.</strong> ICAO's choice of MIPv6 lets aircraft hold continuous IP sessions while switching between VHF and SATCOM air-to-ground networks; concurrent execution across those links matters most in crowded airspace.</li>
+        <li><strong>Control design for collision avoidance.</strong> Collision avoidance modeled as a system invariant in Event-B, where theorem proving establishes that the system never reaches an undesired state and never deadlocks.</li>
+      </ul>
+      <p class="courses">For ECE 5800 System Modeling and Simulation.</p>
+    </article>
+
+    <p class="note"><strong>Security throughout.</strong> Vulnerabilities that arise from concurrency, such as timing flaws, unverified inputs, and unsafe handling of shared resources, are taught inside the modules where they arise rather than isolated in a separate unit.</p>
+
+    <p class="pagelink"><a href="tools.html">Next: the tools these modules use &rarr;</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Acknowledgment.</strong> This material is based upon work supported by the National Science Foundation under Grant Nos. 2612129 and 2612130. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.</p>
+  </div>
+</footer>
+
+</body>
+</html>
